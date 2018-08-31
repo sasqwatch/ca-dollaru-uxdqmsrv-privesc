@@ -112,12 +112,6 @@ As a summary, the following steps will be implemented in the final exploit:
 - At this stage, the _root shell_ binary should be owned by root and should have the _setuid_ and _setgid_ bits enabled.
 - Running the file should pop a shell as root.
 
-Running the exploit script...
-
-<p align="center">
-  <img src="https://github.com/itm4n/ca-dollaru-uxdqmsrv-privesc/raw/master/screenshots/10_exploit.png">
-</p>
-
 ## Side note 
 The machine on which the vulnerability was initially discovered was properly hardened. The _/tmp/_ folder was mounted in a separate partition with the option _nosuid_. It means that although the exploit was successful and the _root shell_ was created, it didn't grant root privileges. Therefore, some additional code was added to search for a world-writable directory in _/opt/_. The global variable _USE_TMP_ is used in the script to specify whether the exploit should use _/tmp/_ as a working directory or recursively search for a suitable one in _/opt/_.
 
