@@ -23,7 +23,7 @@ When the program is executed without any arguments, two error messages are displ
 </p>
 
 The _file_ and _ldd_ commands will give some basic information about the file. Here, we notice two things:
-- Although the host is running on a 64-bit OS, the file is a 32-bit executable.
+- Although the host is running a 64-bit OS, the file is a 32-bit executable.
 - The file is not _stripped_, i.e. it was compiled with debugging information. This may ease the reverse engineering process.
 
 <p align="center">
