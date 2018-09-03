@@ -106,7 +106,7 @@ As a summary, the following steps will be implemented in the final exploit:
 - Set the environment variable _U_LOG_FILE_ to _/etc/ld.so.preload_.
 - Execute the vulnerable binary. This way, _/etc/ld.so.preload_ will be created and will be writable by the current user.
 - Clear the file's content and reference our custom shared object.
-- Finally call _/usr/bin/sudo_ to force the execution of the malicious code.
+- Finally call _/usr/bin/sudo_ to trigger the execution of the malicious code.
 
 ### 4) Run the _root shell_
 - At this stage, the _root shell_ binary should be owned by root and should have the _setuid_ and _setgid_ bits enabled.
@@ -119,7 +119,7 @@ The machine on which the vulnerability was initially discovered was properly har
 At the time of writing, Dollar Universe 5.3.3 is reaching its end of life. Therefore, no patch has been developped on this version.
 
 However, a workaround exists:
-- Remove the setuid uid bit. 
+- Remove the setuid bit. 
 - Create a new entry in _/etc/sudoers_ to enable a specific user to run it as root. 
 
 Alternatively, upgrade to Dollar Universe 6. 
